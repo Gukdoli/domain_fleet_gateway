@@ -1,0 +1,40 @@
+control_domain: 0
+
+robots:
+  - id: robot1
+    name: Robot 1
+    namespace: /robot1
+    domain_id: 1
+    color: '#FF6B6B'
+  - id: robot2
+    name: Robot 2
+    namespace: /robot2
+    domain_id: 2
+    color: '#4ECDC4'
+  - id: robot3
+    name: Robot 3
+    namespace: /robot3
+    domain_id: 3
+    color: '#45B7D1'
+
+rosbridge:
+  port: 9090
+
+bridge:
+  topic_profile: navigation_full
+  output_dir: /tmp/domain_fleet_gateway
+
+pose_sources:
+  - odometry
+  - amcl_pose
+
+health:
+  monitored_topics:
+    - suffix: /odometry
+      type: nav_msgs/msg/Odometry
+    - suffix: /map
+      type: nav_msgs/msg/OccupancyGrid
+    - suffix: /plan
+      type: nav_msgs/msg/Path
+    - suffix: /cmd_vel
+      type: geometry_msgs/msg/Twist

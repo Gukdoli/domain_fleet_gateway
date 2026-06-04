@@ -1,0 +1,84 @@
+profiles:
+  navigation_minimal:
+    forward:
+      - topic: /odometry
+        type: nav_msgs/msg/Odometry
+        remap: '{namespace}/odometry'
+      - topic: /map
+        type: nav_msgs/msg/OccupancyGrid
+        remap: '{namespace}/map'
+        qos:
+          durability: transient_local
+          reliability: reliable
+          history: keep_last
+          depth: 1
+      - topic: /plan
+        type: nav_msgs/msg/Path
+        remap: '{namespace}/plan'
+    reverse:
+      - topic: '{namespace}/goal_pose'
+        type: geometry_msgs/msg/PoseStamped
+        remap: /goal_pose
+
+  navigation_full:
+    forward:
+      - topic: /odometry
+        type: nav_msgs/msg/Odometry
+        remap: '{namespace}/odometry'
+      - topic: /odom
+        type: nav_msgs/msg/Odometry
+        remap: '{namespace}/odom'
+      - topic: /map
+        type: nav_msgs/msg/OccupancyGrid
+        remap: '{namespace}/map'
+        qos:
+          durability: transient_local
+          reliability: reliable
+          history: keep_last
+          depth: 1
+      - topic: /amcl_pose
+        type: geometry_msgs/msg/PoseWithCovarianceStamped
+        remap: '{namespace}/amcl_pose'
+      - topic: /particle_cloud
+        type: geometry_msgs/msg/PoseArray
+        remap: '{namespace}/particle_cloud'
+      - topic: /plan
+        type: nav_msgs/msg/Path
+        remap: '{namespace}/plan'
+      - topic: /local_plan
+        type: nav_msgs/msg/Path
+        remap: '{namespace}/local_plan'
+      - topic: /transformed_global_plan
+        type: nav_msgs/msg/Path
+        remap: '{namespace}/transformed_global_plan'
+      - topic: /global_costmap/costmap
+        type: nav_msgs/msg/OccupancyGrid
+        remap: '{namespace}/global_costmap/costmap'
+      - topic: /global_costmap/costmap_updates
+        type: map_msgs/msg/OccupancyGridUpdate
+        remap: '{namespace}/global_costmap/costmap_updates'
+      - topic: /local_costmap/costmap
+        type: nav_msgs/msg/OccupancyGrid
+        remap: '{namespace}/local_costmap/costmap'
+      - topic: /local_costmap/costmap_updates
+        type: map_msgs/msg/OccupancyGridUpdate
+        remap: '{namespace}/local_costmap/costmap_updates'
+      - topic: /laser_scan
+        type: sensor_msgs/msg/LaserScan
+        remap: '{namespace}/laser_scan'
+      - topic: /scan
+        type: sensor_msgs/msg/LaserScan
+        remap: '{namespace}/scan'
+      - topic: /imu
+        type: sensor_msgs/msg/Imu
+        remap: '{namespace}/imu'
+      - topic: /cmd_vel
+        type: geometry_msgs/msg/Twist
+        remap: '{namespace}/cmd_vel'
+    reverse:
+      - topic: '{namespace}/goal_pose'
+        type: geometry_msgs/msg/PoseStamped
+        remap: /goal_pose
+      - topic: '{namespace}/initialpose'
+        type: geometry_msgs/msg/PoseWithCovarianceStamped
+        remap: /initialpose
