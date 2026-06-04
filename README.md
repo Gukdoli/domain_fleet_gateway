@@ -83,7 +83,7 @@ The router publishes the corresponding `geometry_msgs/msg/PoseStamped` to `/robo
 ```bash
 mkdir -p ~/fleet_ws/src
 cd ~/fleet_ws/src
-git clone https://github.com/region/domain_fleet_gateway.git
+git clone https://github.com/gukdoli/domain_fleet_gateway.git
 cd ~/fleet_ws
 source /opt/ros/humble/setup.bash
 rosdep install --from-paths src --ignore-src -r -y

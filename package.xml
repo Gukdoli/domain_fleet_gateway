@@ -6,9 +6,9 @@
   <description>Fleet gateway for ROS 2 domain-isolated multi-robot systems.</description>
   <maintainer email="region@todo.todo">region</maintainer>
   <license>Apache-2.0</license>
-  <url type="website">https://github.com/region/domain_fleet_gateway</url>
-  <url type="repository">https://github.com/region/domain_fleet_gateway</url>
-  <url type="bugtracker">https://github.com/region/domain_fleet_gateway/issues</url>
+  <url type="website">https://github.com/gukdoli/domain_fleet_gateway</url>
+  <url type="repository">https://github.com/gukdoli/domain_fleet_gateway</url>
+  <url type="bugtracker">https://github.com/gukdoli/domain_fleet_gateway/issues</url>
 
   <exec_depend>rclpy</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>

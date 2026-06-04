@@ -28,7 +28,7 @@ setup(
     zip_safe=True,
     maintainer='region',
     maintainer_email='region@todo.todo',
-    url='https://github.com/region/domain_fleet_gateway',
+    url='https://github.com/gukdoli/domain_fleet_gateway',
     description='Fleet gateway for ROS 2 domain-isolated multi-robot systems.',
     license='Apache-2.0',
     extras_require={
